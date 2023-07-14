@@ -1,4 +1,10 @@
 :root {
+  --primary-color: #007bff; /* blue */
+  --secondary-color: #28a745; /* green */
+  --text-color: #ffffff; /* white */
+  --link-color: #007bff; /* blue */
+  --card-bg-color: #444444; /* dark color for card background */
+  
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -108,4 +114,53 @@ a {
 
 .form-label-muted {
   color: white;
+}
+
+.card-background {
+  background-color: #444444;
+  font-weight: 700;
+  color: #fff;
+}
+
+.card-date{
+  color: lightgreen;
+}
+
+.card-image {
+  object-fit: cover;
+  height: 230px;
+}
+
+.card-title {
+  color: var(--primary-color);
+}
+
+.card-object-date {
+  color: var(--secondary-color);
+}
+
+.card-text {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.card-text a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.card-text a:hover {
+  text-decoration: none;
+}
+
+.card-details {
+  font-weight: bold;
+}
+
+.card-container {
+  background-color: var(--card-bg-color);
+}
+
+.artwork-link-button-colour {
+  text-decoration: none;
 }
