@@ -1,3 +1,4 @@
+import validObjectIDList from "@/public/data/validObjectIDList.json";
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
@@ -23,8 +24,11 @@ export default function ArtIndex(){
     useEffect(() => {
         if (data != null && data != undefined) {
             const results = [];
-            for (let i = 0; i < data?.objectIDs?.length; i += per_page) {
-              const chunk = data?.objectIDs.slice(i, i + per_page);
+            //update: invalid objectID
+            const filteredResults = validObjectIDList.objectIDs.filter(x => data.objectIDs?.includes(x));
+    
+            for (let i = 0; i < filteredResults.length; i += per_page) {
+              const chunk = filteredResults.slice(i, i + per_page);
               results.push(chunk);
             }
             setArtworkList(results);
